@@ -1,0 +1,130 @@
+
+<div class="wrapper-md" ng-controller="MyAskCtrl" style="
+    padding-bottom: 280px;
+    padding-top: 80px;
+    height: 4017px;
+    padding-left: 120px;
+    padding-right: 120px;">
+    <div class="row">
+        <ul class="nav nav-pills pull-left">
+            <li ui-sref-active="active" class="active">
+                <a ui-sref="app.table.askprice" href="#/app/table/askprice">
+                    <span>我要询价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.provideprice" href="#/app/table/provideprice">
+                    <span>我要报价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.myask" href="#/app/table/myask">
+                    <span>我的询价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.myProvide" href="#/app/table/myProvide">
+                    <span>我的报价</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="panel panel-default" style="padding-top: 20px">
+        <div class="panel-heading">我的询价委托:</div>
+
+        <table st-table="rowCollectionPage" class="table table-striped">
+            <thead>
+            <tr>
+                <th>询价委托号</th>
+                <th>标的</th>
+                <th>合约类型</th>
+                <th>标的现价</th>
+                <th>执行价</th>
+                <th>到期日</th>
+                <th>合约规模(手)</th>
+                <th>询价方向</th>
+                <th>报价对手方(家)</th>
+                <th>对手详情</th>
+
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in rowCollectionPage">
+                <td>{{row.AskNum}}</td>
+                <td>{{row.Biaodi}}</td>
+                <td>{{row.ConstractType}}</td>
+                <td>{{row.CurrentPrice}}</td>
+                <td>{{row.ExecuPrice}}</td>
+                <td>{{row.EndDate}}</td>
+                <td>{{row.Amount}}</td>
+                <td>{{row.Angel}}</td>
+                <td>
+                    <div ng-show="row.State == 'NewPublish'">0</div>
+                    <div ng-show="row.State == 'UnderBid'">1</div>
+                </td>
+
+                <td><input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;border: 1px solid #0d47a1;" type="button" value="查看" ng-click="open(row)"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7" class="no-margin"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+
+        <script type="text/ng-template" id="myAskInfo.html">
+            <div class="modal-body wrapper-lg" >
+    <div class="modal-body wrapper-lg ng-scope">
+        <div class="panel panel-default">
+            <div class="panel-heading">我收到的报价委托：{{items.ProvideNum1}}</div>
+            <table st-table="rowCollectionPage" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>报价委托号</th>
+                    <th>报价</th>
+                    <th>报价(%)</th>
+                    <th>报价机构</th>
+                    <th>对手信用评级</th>
+                    <th>保证金%</th>
+                    <th>占用授信额度</th>
+                    <th>点价成交</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{items.ProvideNum1}}</td>
+                    <td>{{items.Price1}}</td>
+                    <td>1.44%</td>
+                    <td>{{items.ProvideID1}}公司</td>
+                    <td>A</td>
+                    <td>{{items.ensurePrice}}</td>
+                    <td>{{items.Quota}}</td>
+                    <td><button class="btn m-b-xs w-xs btn-success" style="background-color: #0d47a1;border: 1px solid #0d47a1;width: 60px;" ng-click="deal()">成交</button></td>
+                </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 text-left" style="width: 638px">
+                <div class="button m-t-lg">
+                    <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1; width:80px; border: 1px solid #0d47a1;" type="button" value="关闭" ng-click="cancel()">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            
+        </script>
+    </div>
+
+
+</div>
+

@@ -1,0 +1,84 @@
+
+<div class="wrapper-md"  style="
+    padding-bottom: 280px;
+    padding-top: 100px;
+    height: 4017px;
+    padding-left: 100px;
+    padding-right: 120px;">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+             <a class="">场外期权标的</a>
+        </div>
+
+        <table st-table="rowCollectionPage" class="table table-striped">
+            <thead>
+            <tr>
+                <th>类别</th>
+                <th>代码</th>
+                <th>品种</th>
+                <th>现价</th>
+                <th>报价机构数</th>
+            </tr>
+
+            </thead>
+            <tbody>
+           
+            <tr >
+                <td>股指</td>
+                <td>510050.OF</td>
+                <td>上证50ETF</td>
+                <td>3.003</td>
+                <td>12</td>
+            </tr>
+            <tr >
+                <td>大商所</td>
+                <td>M1912.DEC</td>
+                <td>豆粕1912</td>
+                <td>2994</td>
+                <td>8</td>
+            </tr>
+            <tr >
+                <td>大商所</td>
+                <td>M2001.DEC</td>
+                <td>豆粕2001</td>
+                <td>2956</td>
+                <td>24</td>
+            </tr>
+            <tr >
+                <td>大商所</td>
+                <td>M2003.DEC</td>
+                <td>豆粕2003</td>
+                <td>2900</td>
+                <td>17</td>
+            </tr>
+            
+
+            </tbody>
+        </table>
+        <script>
+            function jump1(){
+                window.location.href="#/app/table/askprice";
+            }
+        </script>
+        <script>
+            function jump2() {
+                window.location.href="#/app/table/provideprice";
+            }
+        </script>
+
+
+    </div>
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <div class="button m-t-lg">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1; width:150px; border: 1px solid #0d47a1;" type="button" value="询价" onclick="jump1()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1; width:150px; border: 1px solid #0d47a1;" type="button" value="报价" onclick="jump2()">
+                       </div>
+                </div>
+            </div>
+
+
+
+    </div>
+</div>
+

@@ -1,0 +1,126 @@
+<div class="modal-body wrapper-lg ng-scope" ng-controller="PublishBillCtrl" style="
+    padding-bottom: 280px;
+    padding-top: 100px;
+    height: 4017px;
+    padding-left: 100px;
+    padding-right: 20px;">
+
+    <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+
+        <div class="row" style="height:300px">
+            <div class="col-sm-7 text-right" style="width: 100px;">
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">标的</a>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">标的现价</a>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">到期日</a>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">方向</a>
+                    <p></p>
+                    <p></p>
+                </div>
+
+            </div>
+
+            <div class="col-sm-4 " style="width: 160px">
+                <div class="form-group" style="height:34px">
+                    <div class="dropdown">
+
+                        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                            请选择标的物
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                            <li><a>豆箔2001</a></li>
+                        </ul><p></p><p></p>
+                    </div></div>
+
+                <div class="form-group" style="height:34px">
+
+                    <input name="BillInfoAmt" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.BillInfoAmt" required="">
+                    <p></p><p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+
+                    <input name="BillInfoType" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="请输入到期日" ng-model="item.BillInfoType" required="">
+                    <p></p><p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        请选择方向
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a>买入</a></li>
+                        <li><a>卖出</a></li>
+                    </ul>
+                    <p></p><p></p>
+                </div>
+            </div>
+
+            <div class="col-sm-3 text-right" style="width: 120px;">
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">合约类型</a>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">执行价</a>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">合约规模</a>
+                </div>
+
+
+            </div>
+            <div class="col-sm-3 " style="width: 220px">
+
+                <div class="dropdown" style="height:34px">
+
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        请选择合约类型
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a>欧式看涨</a></li>
+                        <li><a>欧式看跌</a></li>
+                        <li><a>美式看涨</a></li>
+                        <li><a>美式看跌</a></li>
+                    </ul>
+                </div>
+
+                <div class="form-group" style="height:34px">
+
+                    <input name="DrwrAcct" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.DrwrAcct" required="">
+                </div>
+                <div class="form-group" style="height:34px">
+                    <input name="DrwrCmID" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.DrwrCmID" required="">
+                </div>
+            </div>
+            <div class="col-sm-1" style="width: 120px">
+                <label>买入看涨</label>
+                <div class="img" style="height: 100px; width: 100px">
+                    <img src="img/long_call.png" style="height: 150px; width: 200px">
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-sm-12 text-right" >
+                <div class="button m-t-lg">
+                    <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1" type="button" value="提交" ng-click="save()"/>
+                    <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1" type="button" value="取消" ng-click="cancel()"/>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

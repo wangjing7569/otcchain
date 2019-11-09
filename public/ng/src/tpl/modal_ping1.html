@@ -1,0 +1,113 @@
+<div class="modal-body "  >
+    <div class="modal-body ng-scope">
+        <div class="row" style="font-size: large;padding-left: 30px;font-weight: bold;">发起平仓询价</div>
+        <div class="row" style="padding-left: 16px;">
+            <div class="col-sm-2" style="   width: 200px;">
+                <div class="form-group">
+                    <a>持仓编号：900165102</a>
+                </div>
+                <div class="form-group">
+                    <a>对手方：B公司</a>
+                </div>
+            </div>
+
+            <div class="col-sm-2" style="width: 200px;">
+                <div class="form-group">
+                    <a>持仓：卖出欧式看跌期权</a>
+                </div>
+
+                <div class="form-group">
+                    <a>对手方信用：A</a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="panel panel-default">
+            <table st-table="rowCollectionPage" class="table table-striped">
+                <thead>
+                <tr>
+                    <th style="width:150px">标的</th>
+                    <th style="width: 150px;">合约类型</th>
+                    <th style="width: 150px;">到期日</th>
+                    <th style="width: 150px;">执行价</th>
+                    <th style=" width: 150px;">方向</th>
+
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>沪深300</td>
+                    <td>欧式看跌</td>
+                    <td>2020-01-13</td>
+                    <td>3600</td>
+                    <td>买入</td>
+
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table" style="">
+                <thead>
+                <tr>
+                    <th style="width: 150px;">合约规模(手)</th>
+                    <th style=" width: 150px; padding-right: 50px;">成交价</th>
+                    <th style="width: 150px;">标的现价</th>
+                    <th style="width: 150px;">距离到期</th>
+                    <th style="width: 150px">浮动盈亏(每手)</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>100</td>
+                    <td>28.45</td>
+                    <td>3846.25</td>
+                    <td>15</td>
+                    <td>28.45</td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table" style="">
+                <thead>
+                <tr>
+                    <th style="width: 150px;">浮动盈亏</th>
+                    <th style="width: 150px;padding-right: 50px;">行权状态</th>
+                    <th style="width: 150px;">收取保证金</th>
+                    <th style="width: 150px;">支付保证金</th>
+                    <th style="width: 150px">CCR</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>2845</td>
+                    <td>不可行权</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+        <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <div class="button m-t-lg">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="提交询价" ng-click="cancel()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="取消" ng-click="cancel()">
+                    </div>
+                </div>
+            </div>
+
+
+
+        </form>
+
+
+    </div>
+
+
+</div>

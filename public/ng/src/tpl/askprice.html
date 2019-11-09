@@ -1,0 +1,202 @@
+<div class="modal-body wrapper-lg ng-scope" ng-controller="PublishPriceCtrl" style="
+    padding-bottom: 280px;
+    padding-top: 80px;
+    height: 4017px;
+    padding-left: 120px;
+    padding-right: 120px;">
+
+    <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+        <div class="row">
+            <ul class="nav nav-pills pull-left">
+                <li ui-sref-active="active" class="active">
+                    <a ui-sref="app.table.askprice" href="#/app/table/askprice">
+                        <span>我要询价</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.table.provideprice" href="#/app/table/provideprice">
+                        <span>我要报价</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.table.myask" href="#/app/table/myask">
+                        <span>我的询价</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.table.myProvide" href="#/app/table/myProvide">
+                        <span>我的报价</span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+
+
+        <div class="row" style="height:300px;padding-top: 20px">
+            <div class="col-sm-7 text-right" style="width: 100px;">
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">标的</a>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">标的现价</a>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">到期日</a>
+                    <p></p>
+                    <p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">方向</a>
+                    <p></p>
+                    <p></p>
+                </div>
+
+            </div>
+
+
+            <div class="col-sm-4 " style="width: 160px">
+
+                <div class="form-group" style="height:34px">
+                    <select name="Biaodi" id="test" onchange="tt()" class="form-control ng-pristine ng-invalid-required ng-valid" ng-model="item.Biaodi" style="width:150px">
+                        <!--<option value="" disabled="" selected="" hidden="">请选择</option>-->
+                        <option value="上证50ETF">上证50ETF(份)</option>
+                        <option value="豆粕1912">豆粕1912(吨)</option>
+                        <option value="豆粕2001">豆粕2001(吨)</option>
+                        <option value="豆粕2003">豆粕2003(吨)</option>
+                        <option value="五花肉">五花肉(吨)</option>
+
+                    </select>
+                </div>
+
+                <div class="form-group" style="height:34px">
+
+                    <input name="CurrentPrice" id="txt" style="width: 150px;" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" ng-model="item.CurrentPrice" disabled="">
+                    <p></p><p></p>
+                </div>
+
+
+
+                <div class="form-group" style="height:34px">
+
+                    <input name="EndDate" type="text" style="width: 150px" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="YYYY-MM-DD" ng-model="item.EndDate" required="">
+                    <p></p><p></p>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <select id="angel" name="Angel" onchange="changeImg()" class="form-control ng-pristine ng-invalid-required ng-valid" ng-model="item.Angel" style="width:150px">
+                        <option value="" disabled="" selected="" hidden="">请选择</option>
+                        <option value="买入">买入</option>
+                        <option value="卖出">卖出</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-sm-3 text-right" style="width: 120px;">
+                <!--<div class="form-group" style="height: 34px">
+                    <a style="line-height: 34px; font-size: 16px">保证金比例</a>
+                </div>-->
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">合约类型</a>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">执行价</a>
+                </div>
+                <div class="form-group" style="height:34px">
+                    <a style="line-height:34px; font-size: 16px">合约规模</a>
+                </div>                
+            </div>
+            <div class="col-sm-3 " style="width: 220px">
+                <!--<div class="form-group" style="height:34px">
+                    <input name="EnsurePrice" type="text" style="width: 150px" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="0-100" ng-model="item.EnsurePrice" required="">
+
+
+                </div>-->
+
+                <div class="form-group" style="height:34px">
+                    <select id="ctype" onchange="changeImg()" name="ConstractType" class="form-control ng-pristine ng-invalid-required ng-valid" ng-model="item.ConstractType" style="width:150px">
+                        <option value="" disabled="" selected="" hidden="">请选择</option>
+                        <option value="欧式看涨">欧式看涨</option>
+                        <option value="欧式看跌">欧式看跌</option>
+                        <option value="美式看涨">美式看涨</option>
+                        <option value="美式看跌">美式看跌</option>
+                    </select>
+                </div>
+
+                <div class="form-group" style="height:34px">
+                    <input name="ExecuPrice" type="text" style="width: 150px" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.ExecuPrice" required="">
+
+
+                </div>
+                <div class="form-group" style="height:34px">
+                    <input name="Amount" type="text" style="width:150px" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.Amount" required="">
+                </div>
+            </div>
+            <div class="col-sm-1" style="width: 120px">
+                <label>收益结构:</label>
+                <div class="img" style="height: 100px; width: 100px">
+                    <img id="imgID" src="img/long_call.png" style="height: 150px; width: 200px">
+                </div>
+            </div>
+        </div>
+        
+        <script>
+            function changeImg() {
+                var angel = document.getElementById("angel");
+                var i = angel.selectedIndex;
+                var valuea = angel.options[i].value;
+                var ctype = document.getElementById("ctype");
+                var j = ctype.selectedIndex;
+                var valuec = ctype.options[j].value;
+                var img = document.getElementById("imgID");
+                if((valuea == "买入" && valuec=="美式看涨") || valuea=="买入" && valuec =="欧式看涨"){
+                    img.src = "img/long_call.png"
+                }
+                if((valuea == "买入" && valuec=="美式看跌") || valuea=="买入" && valuec =="欧式看跌"){
+                    img.src = "img/long_put.png"
+                }
+                if((valuea == "卖出" && valuec=="美式看涨") || valuea=="卖出" && valuec =="欧式看涨"){
+                    img.src = "img/short_call.png"
+                }
+                if((valuea == "卖出" && valuec=="美式看跌") || valuea=="卖出" && valuec =="欧式看跌"){
+                    img.src = "img/short_put.png"
+                }
+            }
+        </script>
+
+        <script>
+            function tt() {
+                var aa = document.getElementById("test");
+                var i = aa.selectedIndex;
+                var text = aa.options[i].text;
+                var value = aa.options[i].value;
+               
+                if (value == "上证50ETF"){
+                    text = "3.003";
+                }
+                
+                if(value == "豆粕1912"){
+                    text = "2994";
+                }
+                if(value == "豆粕2001"){
+                    text="2956";
+                }
+                if(value == "豆粕2003"){
+                    text = "2900";
+                }
+
+               
+                document.getElementById("txt").value = text;
+                document.getElementById("txt").text = text;
+            }
+        </script>
+
+        <div class="button m-t-lg pull-right" style="padding-right:150px">
+            <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1; width:150px; border: 1px solid #0d47a1;" type="button" value="提交" ng-click="save()">
+            <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1; width:150px; border: 1px solid #0d47a1;" type="button" value="取消" ng-click="cancel()">
+        </div>
+    </form>
+</div>

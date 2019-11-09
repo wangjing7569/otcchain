@@ -1,0 +1,76 @@
+      <!-- navbar header -->
+ <nav class="navbar navbar-default navbar-fixed-top nav-justified">
+      <div>
+      <!-- / navbar header -->
+          <div class="nav nav-pills">
+              <li ng-class="{active:$state.includes('app.table')}" class="active">
+                  <div class="left" style="background-color: white; height: 80px;font-weight: bold; border-bottom: 1px solid black;">
+
+                      <p><span style=" font-size: 22px; padding-left: 83px">&nbsp;&nbsp;&nbsp;OTC Chain Broker </span>
+                          <img src="img/logo1.png" class="pull-right pull-up" style="height: 40px;padding-right: 150px"></p>
+
+                      <ul class="navbar navbar-nav navbar-right pull-down" style="padding-right:130px;padding-top: 12px">
+                          <li><a class="right pull-down ng-binding" href="#" style="color: #717a84">{{app.loginname}},欢迎登录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+                          <li><a href="#" style="color: #717a84">退出&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></li></ul>
+
+                      <p><span style="font-size: 22px; padding-left: 83px">&nbsp;&nbsp;&nbsp;场外衍生品链上交易平台仿真系统&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+
+
+                  </div>
+
+
+
+
+                  <ul class="nav nav-pills nav-justified" style="padding-left:80px;padding-right:100px">
+                      <li ui-sref-active="active">
+                          <a ui-sref="app.table.index" href="#/app/table/index">
+                              <span>首页</span>
+                          </a>
+                      </li>
+                      <li ui-sref-active="active" class="active">
+                          <a ui-sref="app.table.askprice" href="#/app/table/askprice">
+                              <span>询价/报价</span>
+                          </a>
+                      </li>
+
+                      <li ui-sref-active="active">
+                          <a ui-sref="app.table.transaction" href="#/app/table/trans">
+                              <span>交易管理</span>
+                          </a>
+                      </li>
+                      <li ui-sref-active="active">
+                          <a ui-sref="app.table.account" href="#/app/table/account">
+                              <span>账户管理</span>
+                          </a>
+                      </li>
+                      <li ui-sref-active="active">
+                          <a ui-sref="app.table.credit" href="#/app/table/credit">
+                              <span>信用中心</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a href="http://47.99.195.52:8080/#/">
+                              <span>区块链浏览器</span>
+                          </a>
+                      </li>
+                      <li>
+                          <a>
+                              <span>关于</span>
+                          </a>
+                      </li>
+
+                  </ul>
+              </li></div>
+
+      <!-- navbar collapse -->
+      <div class="collapse pos-rlt navbar-collapse box-shadow {{app.settings.navbarCollapseColor}}">
+        <!-- buttons -->
+        <div class="nav navbar-nav>
+            <!-- dropdown -->
+
+        <!-- / navbar right -->
+
+        </div></div>
+          </div></nav>
+      <!-- / navbar collapse -->

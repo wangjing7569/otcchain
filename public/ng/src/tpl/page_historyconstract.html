@@ -1,0 +1,93 @@
+<div class="modal-body wrapper-lg ng-scope" ng-controller="HisCtrl" style="
+    padding-bottom: 280px;
+    padding-top: 80px;
+    height: 4017px;
+    padding-left: 120px;
+    padding-right: 120px;">
+
+    <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+        <div class="row">
+            <ul class="nav nav-pills pull-left">
+                <li ui-sref-active="active" class="active">
+                    <a ui-sref="app.table.transaction" href="#/app/table/trans">
+                        <span>当前持仓</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.table.calconstract" href="#/app/table/cal">
+                        <span>结算合约</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.table.hangconstract" href="#/app/table/hang">
+                        <span>挂起合约</span>
+                    </a>
+                </li>
+                <li ui-sref-active="active">
+                    <a ui-sref="app.table.historyconstract" href="#/app/table/hiscontract">
+                        <span>历史合约</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </form>
+
+     <div class="panel panel-default" style="width: 1020px;">
+        <table st-table="rowCollectionPage" class="table table-striped" style="">
+            <thead>
+            <tr  >
+                <th>持仓编号</th>
+                <th>标的</th>
+                <th>合约类型</th>
+                <th>执行价</th>
+                <th>到期日</th>
+                <th>合约规模(手)</th>
+                <th>方向</th>
+                <th>交易对手</th>
+                <th>对手信用评级</th>
+                <th>当前状态</th>
+                <th>详情</th>
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in rowCollectionPage">
+                <td>{{row.OrderID}}</td>
+                <td>{{row.Underlying}}</td>
+                <td>{{row.ConstractType}}</td>
+                <td>{{row.StrikePrice}}</td>
+                <td>{{row.ExpiringDate}}</td>
+                <td>{{row.ConstractSize}}</td>
+                <td>{{row.Angel}}</td>
+                <td>{{row.BuyParty}}公司</td>
+                <td>{{row.BuyParty}}</td>
+                <td>交收成功</td>
+                <td><button class="btn m-b-xs w-xs btn-success" style="background-color: #0d47a1;border: 1px solid #0d47a1;width: 60px;" ng-click="open(row)">查看</button></td>
+            </tr>
+             <tr ng-repeat="row in rowCollections">
+                <td>{{row.OrderID}}</td>
+                <td>{{row.Underlying}}</td>
+                <td>{{row.ConstractType}}</td>
+                <td>{{row.StrikePrice}}</td>
+                <td>{{row.ExpiringDate}}</td>
+                <td>{{row.ConstractSize}}</td>
+                <td>
+                    {{row.Angel}}
+                
+                </td>
+                <td>{{row.SaleParty}}公司</td>
+                <td>{{row.SaleParty}}</td>
+                <td>交收成功</td>
+                <td><button class="btn m-b-xs w-xs btn-success" style="background-color: #0d47a1;border: 1px solid #0d47a1;width: 60px;" ng-click="open(row)">查看</button></td>
+            </tr>
+
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7" class="no-margin ng-isolate-scope"><!-- ngIf: pages.length >= 2 --></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+</div>

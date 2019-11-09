@@ -1,0 +1,202 @@
+
+<div class="wrapper-md" ng-controller="MyProvideCtrl" style="
+    padding-bottom: 280px;
+    padding-top: 80px;
+    height: 4017px;
+    padding-left: 120px;
+    padding-right: 120px;">
+    <div class="row">
+        <ul class="nav nav-pills pull-left">
+            <li ui-sref-active="active" class="active">
+                <a ui-sref="app.table.askprice" href="#/app/table/askprice">
+                    <span>我要询价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.provideprice" href="#/app/table/provideprice">
+                    <span>我要报价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.myask" href="#/app/table/myask">
+                    <span>我的询价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.myProvide" href="#/app/table/myProvide">
+                    <span>我的报价</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+
+    <div class="panel panel-default" style="padding-top: 20px">
+        <div class="panel-heading">我的报价委托</div>
+
+        <table st-table="rowCollectionPage" class="table table-striped">
+            <thead>
+            <tr>
+                <th>报价委托号</th>
+                <th>标的</th>
+                <th>合约类型</th>
+                <th>执行价</th>
+                <th>到期日</th>
+                <th>合约规模(手)</th>
+                <th>询价方向</th>
+                <th>报价</th>
+                <th>报价状态</th>
+                <th>详情</th>
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in rowCollectionPage">
+                <td>
+                    <div ng-show="row.ProvideNum1 ！= ''">{{row.ProvideNum1}}</div>
+                    <div ng-show="row.ProvideNum2 != ''">{{row.ProvideNum2}}</div>
+                
+                </td>
+                <td>{{row.Biaodi}}</td>
+                <td>{{row.ConstractType}}</td>
+                <td>{{row.ExecuPrice}}</td>
+                <td>{{row.EndDate}}</td>
+                <td>{{row.Amount}}</td>
+                <td>{{row.Angel}}</td>
+                <td>
+                    <div ng-show="row.Price1 != ''">{{row.Price1}}</div>
+                    <div ng-show="row.Price2 != ''">{{row.Price2}}</div>
+                </td>
+                <td>
+                    <div ng-show="row.State == 'UnderBid'">可撤</div>
+                    <div ng-show="row.State == 'Dealed'">已成</div>
+                </td>    
+                <td><button class="btn m-b-xs w-xs btn-success"  style="background-color: #0d47a1;border: 1px solid #0d47a1;" ng-click="open(row)">查看</button></td>
+                   </tr>
+            </tbody>
+            <tfoot>
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7" class="no-margin"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+
+        <script type="text/ng-template" id="myProvideInfo.html">
+            <div class="modal-body " >
+    <div class="modal-body ng-scope">
+        <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+            <div class="row" style="height: 34px">
+                <a style="line-height:34px; font-size: 14px">对应询价委托号:{{items.ProvideNum1}}</a>
+            </div>
+            <div class="row">
+                <div class="col-sm-3" style="width:200px; padding-left:50px">
+                    <div class="form-group">
+                        <label>交易对手方: {{items.PublishID}}公司</label>
+                    </div>
+                    <div class="form-group">
+                        <label>担保机构: 无</label>
+                    </div>
+                    <div class="form-group">
+                        <label>报价(每手): {{items.Price1}}</label>
+                    </div>
+                </div>
+
+                <div class="col-sm-3" style="width:200px; padding-left:60px">
+                    <div class="form-group">
+                        <label>对手信用评级: BBB</label>
+                    </div>
+                    <div class="form-group">
+                        <label>授信额度(万元): 0</label>
+                    </div>
+                    <div class="form-group">
+                        <label>报价(%): 1.44%</label>
+                    </div>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12 text-left" style="width: 638px">
+                    <div class="button m-t-lg">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1; width:80px; border: 1px solid #0d47a1;" type="button" value="撤单" ng-click="withdraw()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1; width:80px; border: 1px solid #0d47a1;" type="button" value="关闭" ng-click="cancel()">
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+        </script>
+    </div>
+
+    <!--<div class="row">
+        <div class="col-sm-12 text-right">
+            <div class="button m-t-lg">
+                <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;border: 1px solid #0d47a1;width: 150px;" type="button" value="全部撤单" ng-click="save()">
+
+            </div>
+        </div>
+    </div>-->
+
+    <!--<div class="modal-body wrapper-lg ng-scope">
+
+        <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+            <div class="row" style="height: 34px">
+                <a style="line-height:34px; font-size: 14px">头寸明细:</a>
+            </div>
+
+            <table st-table="rowCollectionPage" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>成交价</th>
+                    <th>浮动盈亏(每手)</th>
+                    <th>收取保证金</th>
+                    <th>标的现价</th>
+                    <th>浮动盈亏</th>
+                    <th>支付保证金</th>
+                    <th>距离到期</th>
+                    <th>行权状态</th>
+                    <th>CCR</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr >
+                    <td></td>
+                    <td>
+
+                    </td>
+                    <td>
+
+                    </td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="5" class="text-center">
+                        <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7" class="no-margin"></div>
+                    </td>
+                </tr>
+                </tfoot>
+            </table>
+
+
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <div class="button m-t-lg">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;border: 1px solid #0d47a1;" type="button" value="CCR计量" ng-click="save()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;border: 1px solid #0d47a1;" type="button" value="提前平仓" ng-click="save()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;border: 1px solid #0d47a1;" type="button" value="发起行权" ng-click="cancel()">
+                    </div>
+                </div>
+            </div>
+
+
+        </form>
+    </div>
+    -->
+
+</div>
+

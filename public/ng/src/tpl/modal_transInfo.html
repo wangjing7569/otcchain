@@ -1,0 +1,64 @@
+<div class="modal-body ng-scope" >
+    <div class="modal-body ng-scope">
+        <div class="panel panel-default">
+            <div class="panel-heading">头寸明细：</div>
+
+            <table st-table="rowCollectionPage" class="table table-striped">
+                <thead>
+                <tr>
+                    <th style="width:150px">成交价</th>
+                    <th style="width: 150px;">标的现价</th>
+                    <th style=" width: 150px;">距离到期</th>
+                    <th style=" width: 150px;">浮动盈亏(每手)</th>
+                    <th style=" width: 150px;">浮动盈亏</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>58.43</td>
+                    <td>2962</td>
+                    <td>3</td>
+                    <td>-46.43</td>
+                    <td>-4643</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table" style="width: 670px;">
+                <thead>
+                <tr>
+                    <th style=" width: 150px;">行权状态</th>
+                    <th style="width: 150px;padding-right: 50px;">收取保证金</th>
+                    <th style="width: 150px;">支付保证金</th>
+                    <th style=" width: 150px;">CCR</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>可行权</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <div class="button m-t-lg">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="CCR计量" ng-click="save()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="平仓" ng-click="save()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="行权/结算" ng-click="views()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="终止事件" ng-click="cancel()">
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <script type="text/ng-template" id="myCommuteInfo.html">
+            <div ng-include="'tpl/modal_commuteInfo.html'"></div>
+        </script>
+    </div>
+</div>

@@ -1,0 +1,132 @@
+
+<div class="wrapper-md" ng-controller="MyBillCtrl" style="
+    padding-bottom: 280px;
+    padding-top: 100px;
+    height: 4017px;
+    padding-left: 120px;
+    padding-right: 120px;">
+	<div class="panel panel-default">
+		<div class="panel-heading">当前有效询价</div>
+
+		<table st-table="rowCollectionPage" class="table table-striped">
+			<thead>
+			<tr>
+				<th>标的</th>
+				<th>合约类型</th>
+				<th>标的现价</th>
+				<th>执行价</th>
+				<th>到期日</th>
+				<th>合约规模(手)</th>
+				<th>询价方向</th>
+				<th>交易对手</th>
+				<th>对手信用评级</th>
+			</tr>
+
+			</thead>
+			<tbody>
+			<tr ng-repeat="row in rowCollectionPage">
+				<td>{{row.BillInfoID}}</td>
+				<td>
+					<div ng-show="row.State == 'NewPublish'">新发布</div>
+					<div ng-show="row.State == 'EndrWaitSign'">背书待签收</div>
+					<div ng-show="row.State == 'EndrSigned'">背书已签收</div>
+					<div ng-show="row.State == 'EndrReject'">背书已拒收</div>
+				</td>
+				<td>
+					<div ng-show="row.State == 'NewPublish'">当前持有</div>
+					<div ng-show="row.State == 'EndrWaitSign' && row.HodrCmID == loginuser.cmId">当前持有,待{{row.WaitEndorserAcct}}背书签收</div>
+					<div ng-show="row.State == 'EndrWaitSign' && row.WaitEndorserCmID == loginuser.cmId">待{{row.WaitEndorserAcct}}背书签收</div>
+					<div ng-show="row.State == 'EndrSigned'  && row.HodrCmID == loginuser.cmId">当前持有</div>
+					<div ng-show="row.State == 'EndrReject'">当前持有，背书已拒收</div>
+				</td>
+				<td><button class="btn m-b-xs w-xs btn-success" ng-click="view(row)">详情</button></td>
+			</tr>
+			</tbody>
+			<tfoot>
+			<tr>
+				<td colspan="5" class="text-center">
+					<div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7" class="no-margin"></div>
+				</td>
+			</tr>
+			</tfoot>
+		</table>
+
+		<script type="text/ng-template" id="myBillInfo.html">
+			<div ng-include="'tpl/modal_billInfo.html'"></div>
+		</script>
+	</div>
+
+    <div class="modal-body wrapper-lg ng-scope">
+
+        <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+            <div class="row" style="height: 34px">
+                <a style="line-height:34px; font-size: 14px">询价委托号:100434928</a>
+            </div>
+
+            <div class="row" style="height:100px">
+                <div class="col-sm-2 text-right" style="width: 120px;">
+                    <div class="form-group" style="height:34px">
+                        <a style="line-height:34px; font-size: 14px">客户卖出价:</a>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div class="form-group" style="height:34px">
+                        <a style="line-height:34px; font-size: 14px">客户买入价:</a>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
+
+                <div class="col-sm-2 " style="width: 160px">
+
+                    <div class="form-group" style="height:34px">
+
+                        <input name="BillInfoAmt" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.BillInfoAmt" required="">
+                        <p></p><p></p>
+                    </div>
+                    <div class="form-group" style="height:34px">
+
+                        <input name="BillInfoType" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.BillInfoType" required="">
+                        <p></p><p></p>
+                    </div>
+
+                </div>
+
+                <div class="col-sm-2 text-right" style="width: 130px;">
+                    <div class="form-group" style="height:34px">
+                        <a style="line-height:34px; font-size: 14px">客户卖出价(%):</a>
+                    </div>
+                    <div class="form-group" style="height:34px">
+                        <a style="line-height:34px; font-size: 14px">客户买入价(%):</a>
+                    </div>
+
+
+                </div>
+                <div class="col-sm-2 " style="width: 220px">
+
+                    <div class="form-group" style="height:34px">
+                        <input name="DrwrAcct" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.DrwrAcct" required="">
+                    </div>
+                    <div class="form-group" style="height:34px">
+                        <input name="DrwrCmID" type="text" class="form-control ng-pristine ng-invalid-required ng-invalid" placeholder="" ng-model="item.DrwrCmID" required="">
+                    </div>
+                </div>
+
+				<div class="col-sm-2 text-right pull-down" style="width: 200px">
+
+                </div>
+            </div>
+			<div class="row">
+                <div class="col-sm-12 text-right">
+                    <div class="button m-t-lg">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1" type="button" value="提交" ng-click="save()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1" type="button" value="清空" ng-click="cancel()">
+                    </div>
+                </div>
+			</div>
+
+
+        </form>
+    </div>
+</div>
+

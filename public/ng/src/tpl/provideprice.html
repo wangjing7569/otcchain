@@ -1,0 +1,259 @@
+
+<div class="wrapper-md" ng-controller="PublishProvideCtrl" style="
+    padding-bottom: 280px;
+    padding-top: 80px;
+    height: 4017px;
+    padding-left: 120px;
+    padding-right: 120px;">
+    <div class="row">
+        <ul class="nav nav-pills pull-left">
+            <li ui-sref-active="active" class="active">
+                <a ui-sref="app.table.askprice" href="#/app/table/askprice">
+                    <span>我要询价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.provideprice" href="#/app/table/provideprice">
+                    <span>我要报价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.myask" href="#/app/table/myask">
+                    <span>我的询价</span>
+                </a>
+            </li>
+            <li ui-sref-active="active">
+                <a ui-sref="app.table.myProvide" href="#/app/table/myProvide">
+                    <span>我的报价</span>
+                </a>
+            </li>
+        </ul>
+
+    </div>
+
+    <div class="panel panel-default" style="padding-top: 20px">
+        <div class="panel-heading">当前有效询价：</div>
+
+        <table st-table="rowCollectionPage" class="table table-striped">
+            <thead>
+            <tr>
+                <th>标的</th>
+                <th>合约类型</th>
+                <th>标的现价</th>
+                <th>执行价</th>
+                <th>到期日</th>
+                <th>合约规模(手)</th>
+                <th>询价方向</th>
+                <th>交易对手</th>
+                <th>对手信用评级</th>
+                <th>详情</th>
+
+            </tr>
+
+            </thead>
+            <tbody>
+            <tr ng-repeat="row in rowCollectionA">
+                <td>{{row.Biaodi}}</td>
+                <td>{{row.ConstractType}}</td>
+                <td>{{row.CurrentPrice}}</td>
+                <td>{{row.ExecuPrice}}</td>
+                <td>{{row.EndDate}}</td>
+                <td>{{row.Amount}}</td>
+                <td>{{row.Angel}}</td>
+                <td>{{row.PublishID}}</td>
+                <td>A</td>
+                <td><button class="btn m-b-xs w-xs btn-success"  style="background-color: #0d47a1;border: 1px solid #0d47a1;" ng-click="open(row)">查看</button></td>
+            </tr>
+
+            <tr ng-repeat="row in rowCollectionB">
+                <td>{{row.Biaodi}}</td>
+                <td>{{row.ConstractType}}</td>
+                <td>{{row.CurrentPrice}}</td>
+                <td>{{row.ExecuPrice}}</td>
+                <td>{{row.EndDate}}</td>
+                <td>{{row.Amount}}</td>
+                <td>{{row.Angel}}</td>
+                <td>{{row.PublishID}}</td>
+                <td>A</td>
+                <td><button class="btn m-b-xs w-xs btn-success"  style="background-color: #0d47a1;border: 1px solid #0d47a1;" ng-click="open(row)">查看</button></td>
+            </tr>
+            <tr ng-repeat="row in rowCollectionC">
+                <td>{{row.Biaodi}}</td>
+                <td>{{row.ConstractType}}</td>
+                <td>{{row.CurrentPrice}}</td>
+                <td>{{row.ExecuPrice}}</td>
+                <td>{{row.EndDate}}</td>
+                <td>{{row.Amount}}</td>
+                <td>{{row.Angel}}</td>
+                <td>{{row.PublishID}}</td>
+                <td>A</td>
+                <td><button class="btn m-b-xs w-xs btn-success"  style="background-color: #0d47a1;border: 1px solid #0d47a1;" ng-click="open(row)">查看</button></td>
+            </tr>
+            
+            </tbody>
+            <tfoot>
+            
+            <tr>
+                <td colspan="5" class="text-center">
+                    <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7" class="no-margin"></div>
+                </td>
+            </tr>
+            </tfoot>
+        </table>
+
+
+        <script type="text/ng-template" id="myBillInfo.html">
+<div class="modal-body wrapper-lg">
+ 
+    <div class="modal-body ">
+        <div class="row" style="width: 600px;">
+            <div class="col-sm-1">
+                
+                 <div class="form-group form-inline" style="width:400px">
+            <a>询价委托号: {{items.AskNum}}</a>
+                 </div>
+        </div>
+</div>
+        <div class="row" style="
+    padding-left: 16px;
+">
+            <div class="col-sm-1" style="
+    width: 200px;
+">
+                <div class="form-group">
+                    <a>对手方: {{items.PublishID}} 公司</a>
+                </div>
+            </div>
+
+            <div class="col-sm-1" style="
+    width: 200px;
+">
+                <div class="form-group">
+                    <a>对手方信用： BBB</a>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+         <table st-table="rowCollectionPage" class="table table-striped">
+            <thead>
+        <tr>
+            <th>标的</th>
+            <th>合约类型</th>
+            <th>到期日</th>
+            <th>执行价</th>
+            <th>询价方向</th>
+            <th>合约规模(手)</th>
+        </tr>
+
+           </thead>
+        <tbody>
+        <tr >
+            <td>{{items.Biaodi}}</td>
+            <td>
+                {{items.ConstractType}}
+            </td>
+            <td>
+                {{items.EndDate}}
+            </td>
+            <td>{{items.ExecuPrice}}</td>
+            <td>{{items.Angel}}</td>
+            <td>{{items.Amount}}</td>
+        </tr>
+
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="5" class="text-center">
+                <div st-pagination="" st-items-by-page="itemsByPage" st-displayed-pages="7" class="no-margin"></div>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+
+
+    
+        <div class="row">
+            <div class="col-sm-3" style="width: 33%">
+                <div class="form-group">
+                    <label>客户卖出价：</label>
+                    <input name="sale" type="text" value="" class="form-control" ng-model="items.Price1" required="">
+                </div>
+                <div class="form-group">
+                    <label>客户买入价：</label>
+                    <input name="buy" type="text" value="" class="form-control" ng-model="items.Price1Per" required="">
+                </div>
+                <div class="form-group">
+                    <label>要求保证金(%)：</label>
+                    <input name="ensurePrice" id="ensurePrice" type="text" value="" class="form-control" ng-model="items.ensurePrice" required="" >
+                </div>
+
+            </div>
+            <div class="col-sm-3" style="width: 33%">
+                <div class="form-group">
+                    <label>客户卖出价(%)：</label>
+                    <input name="salePer" type="text" value="" class="form-control" ng-model="items.PricePingPer" required="">
+                </div>
+                <div class="form-group">
+                    <label>客户买入价(%)：</label>
+                    <input name="buyPer" type="text" value="" class="form-control" ng-model="items.PricePing" required="">
+                </div>
+                <div class="form-group">
+                    <label>占用授信额度(元)：</label>
+                    <input name="Quota" id="Quota" type="text" value="" class="form-control" ng-model="items.Quota" required="" >
+                </div>
+
+
+            </div>
+
+
+            <div class="col-sm-3" style="width: 33%">
+                <div class="form-group" style=" padding-top: 30px;">
+                    <input name="c1" type="checkbox" id = "che1" value={{items.c1}} style=" width: 20px;height: 20px;" ng-model="items.c1">
+                </div>
+                <div class="form-group" style="padding-top: 26px;">
+                    <input name="c2" type="checkbox" value={{items.c2}} style="width: 20px;height: 20px;" ng-model="items.c2">
+                </div>
+                <div class="form-group" style="padding-top: 26px;">
+                    <input name="c3" type="checkbox" value={{items.c3}} style="width: 20px;height: 20px;" ng-model="items.c3">
+                </div>
+            </div>
+
+        </div>
+
+        <form class="form-inline ng-pristine ng-invalid-required ng-invalid">
+            <div class="row">
+                <div class="col-sm-12 text-right">
+                    <div class="button m-t-lg">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="执行定价" ng-click="ok()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="提交" ng-click="submit()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="清空" ng-click="clear()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="取消" ng-click="cancel()">
+                    </div>
+                </div>
+            </div>
+
+
+
+        </form>
+        
+
+
+    </div>
+<script type="text/javascript">
+                var c1 = document.getElementById("che1");
+                if (c1.value == "True"){
+                    c1.checked = true;
+                }
+            </script>
+
+</div>
+</script>
+       
+
+    </div>
+
+
+</div>
+

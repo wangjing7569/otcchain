@@ -1,0 +1,40 @@
+.w50 {
+    width: 50%;
+}
+.sub-block {
+    width: 49%;
+    height: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+.echart {
+    width: 100%;
+    height: 100%;
+}
+.inp {
+    width: 100%;
+    margin-top: 20px;
+}
+.inp-item {
+    width: 49%;
+    display: inline-block;
+}
+.acright {
+    float: right;
+}
+.laceft {
+    float: left;
+}
+.money-bar {
+    text-align: center;
+    left: 50%;
+    color: #fff;
+}
+.money-bar-left {
+    display: inline-block;
+    background: blue;
+}
+.money-bar-right {
+    display: inline-block;
+    background: orange;
+}

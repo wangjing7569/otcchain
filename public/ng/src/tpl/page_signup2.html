@@ -1,0 +1,60 @@
+<div class="container w-xxl w-auto-xs" ng-controller="SignupFormController" ng-init="app.settings.container = false;">
+    <a href class="navbar-brand block m-t">企业信息页</a>
+    <div class="m-b-lg">
+
+        <form name="form" class="form-validation">
+            <!--<div class="text-danger wrapper text-center" ng-show="authError">{{authError}}
+          </div> -->
+            <div class="list-group list-group-sm">
+                <div class="list-group-item">
+                    <input placeholder="企业名称" class="form-control no-border"  required>
+                </div>
+                <div class="list-group-item">
+                    <input  placeholder="统一社会信用代码" class="form-control no-border"  required>
+                </div>
+                <div class="list-group-item">
+                    <input  placeholder="注册资本" class="form-control no-border"  required>
+                </div>
+                <div class="list-group-item">
+                    <input placeholder="企业地址" class="form-control no-border"  required>
+                </div>
+                <div class="list-group-item">
+                    <select>
+                        <option>企业类型</option>
+                        <option>个人独资</option>
+                        <option>合伙企业</option>
+                        <option>公司</option>
+                    </select>
+                </div>
+                <div class="list-group-item">
+                    <input placeholder="法人姓名" class="form-control no-border"  required>
+                </div>
+                <div class="list-group-item">
+                    <input placeholder="法人身份证号码" class="form-control no-border"  required>
+                </div>
+                <div class="list-group-item">
+                    <input placeholder="企业户名" class="form-control no-border"  required>
+                </div>
+                <div class="list-group-item">
+                    <input placeholder="开户银行名称" class="form-control no-border"  required>
+                </div>
+                <div class="list-group-item">
+                    <input placeholder="银行账户" class="form-control no-border"  required>
+                </div>
+            </div>
+            <!--<div class="checkbox m-b-md m-t-none">
+                <label class="i-checks">
+                    <input type="checkbox" ng-model="agree" required><i></i> 同意 <a href>条款和政策</a>
+                </label>
+            </div>-->
+            <p class="text-center" ><a ui-sref="access.signin"  href="#access/signin">已经有了帐号?</a></p>
+            <button type="submit" class="btn btn-lg btn-primary btn-block" ng-click="signup()" ng-disabled='form.$invalid'>保存</button>
+            <div class="line line-dashed"></div>
+
+            <a ui-sref="access.signup1" class="btn btn-lg btn-primary btn-block" href="#access/signup1">上一步</a>
+            <a ui-sref="access.signup3" class="btn btn-lg btn-primary btn-block" href="#access/signup3">下一步</a>
+
+        </form>
+    </div>
+    <div class="text-center" ng-include="'tpl/blocks/page_footer.html'"></div>
+</div>

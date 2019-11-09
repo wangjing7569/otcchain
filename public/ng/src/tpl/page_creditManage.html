@@ -1,0 +1,140 @@
+<div class="modal-body wrapper-lg ng-scope " style="
+    padding-bottom: 280px;
+    padding-top: 80px;
+    height: 4017px;
+    padding-left: 100px;
+    padding-right: 20px;" >
+    <div class="modal-body ng-scope">
+        <div class="row" style="
+    height: 30px;
+">
+            <div class="col-sm-1" style="
+    width: 400px;
+">
+                <a style="font-size: large;font-weight: bold;/* width: 200px; */">
+                    C公司, 当前信用评级： AA
+                </a>
+            </div>
+
+            <div class="col-sm-1 pull-right" style="
+    padding-right: 200px;
+    /* padding-bottom: 20px; */
+    height: 30px;
+">
+                <div class="form-group">
+                    <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="明细" ng-click="cancel()">
+                </div>
+            </div>
+
+        </div>
+
+        <div class="panel panel-default" style="
+    width: 970px;
+    font-size: 14px;
+">
+            <table st-table="rowCollectionPage" class="table table-striped" style="
+    /* font-size: 14px; */
+    /* width: 800px; */
+">
+                <thead>
+                <tr>
+                    <th style="width: 170px;">外部初始评级</th>
+                    <th style="width: 150px;">授信额度(元)</th>
+                    <th style="width: 150px;">保证金(元)</th>
+                    <th style="width: 150px;">总交易数(笔)</th>
+                    <th style="width: 150px;">总成交额(元)</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td>A</td>
+                    <td>20,000,000.00</td>
+                    <td>50,352.13</td>
+                    <td>12</td>
+                    <td>252,412.72</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="table" style="
+    /* width: 670px; */
+">
+                <thead>
+                <tr>
+
+                    <th style="width: 170px;">当前持仓名义资本金(元)</th>
+                    <th style="width: 150px;">已结交易数(笔)</th>
+                    <th style="width: 150px;">终止交易数(笔)</th>
+                    <th style="
+    width: 150px;
+">违约交易数(笔)</th>
+                    <th style="
+    width: 150px;
+">违约交易金额(元)</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+
+                    <td>12,010,340.00</td>
+                    <td>9</td>
+                    <td>0</td>
+                    <td>0</td>
+                    <td>0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="row">
+            <div class="col-sm-1" style="width: 200px">
+                <div class="form-group">
+                    <a style="font-size: large">机构信用查询：</a>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-sm-2">
+                <div class="form-group form-inline" style="width: 200px">
+                    <label>机构名称：</label>
+                    <input name="PricePingPer" type="text" class="form-control ng-pristine ng-invalid ng-invalid-required" ng-model="item.PricePingPer" required="">
+                </div>
+                <div class="form-group form-inline" style="width: 200px">
+                    <label>模糊查询：</label>
+                    <input type="checkbox" style="width: 16px" class="form-control ng-pristine ng-invalid ng-invalid-required" value="" ng-model="item.PricePingPer" required="">
+                </div>
+            </div>
+
+            <div class="col-sm-1">
+                <div class="form-group form-inline" style="width: 200px">
+                    <label>社会信用代码：</label>
+                    <input name="PricePingPer" type="text" class="form-control ng-pristine ng-invalid ng-invalid-required" value="0.41%" ng-model="item.PricePingPer" required="">
+                </div>
+
+            </div>
+
+
+        </div>
+
+        <form class="form-inline ng-pristine ng-invalid-required ng-valid">
+            <div class="row">
+                <div class="col-sm-12 text-right" style="padding-right: 95px">
+                    <div class="button m-t-lg">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="查询" ng-click="cancel()">
+                        <input class="btn btn-success m-t-n-xs" style="background-color: #0d47a1;width: 100px;border: 1px solid #0d47a1;" type="button" value="清空" ng-click="cancel()">
+                    </div>
+                </div>
+            </div>
+
+
+
+        </form>
+
+
+    </div>
+
+</div>
