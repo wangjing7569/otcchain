@@ -28,7 +28,7 @@
     "fabric-client": "^1.0.0",
     "fs": "0.0.1-security",
     "fs-extra": "^2.0.0",
-    "jsonwebtoken": "^7.3.0",
+    "jsonwebtoken": "^9.0.0",
     "log4js": "^0.6.38",
     "silly-datetime": "^0.1.2"
   },
